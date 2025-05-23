@@ -1,7 +1,8 @@
-import { Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
-import Index from './pages/index';
-import Onboarding from './pages/Onboarding';
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Page1 from "./pages/Page1";
+import Onboarding from "./pages/Onboarding";
+import Result from "./pages/Result"; // Result 컴포넌트 import 추가
 
 function App() {
   return (
@@ -18,7 +19,15 @@ function App() {
         path="/index"
         element={
           <Layout>
-            <Index />
+            <Page1 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/result"
+        element={
+          <Layout>
+            <Result />
           </Layout>
         }
       />
