@@ -3,7 +3,7 @@ import SettingIcon from '../assets/hamburger.svg';
 
 export default function TopNav() {
   return (
-    <header className="w-full bg-white px-4 py-3 flex items-center justify-between">
+    <header className="w-full bg- px-5 py-5 flex items-center justify-between">
       
       {/* 왼쪽 벨 아이콘 (버튼으로 클릭 가능) */}
       <button type="button" className="focus:outline-none">
