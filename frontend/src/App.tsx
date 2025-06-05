@@ -1,20 +1,16 @@
-import { Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Page1 from "./pages/Page1";
-import Onboarding from "./pages/Onboarding";
-import Result from "./pages/Result"; // Result 컴포넌트 import 추가
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Page1 from './pages/Page1';
+import Onboarding from './pages/Onboarding';
+import Result from './pages/Result';
 
 function App() {
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <Layout>
-            <Onboarding />
-          </Layout>
-        }
-      />
+      {/* Onboarding은 Layout 없이 직접 렌더링 */}
+      <Route path="/" element={<Onboarding />} />
+      
+      {/* 나머지 페이지들은 Layout으로 감싸기 */}
       <Route
         path="/index"
         element={
