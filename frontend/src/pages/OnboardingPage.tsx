@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import onboardingimg from '../assets/firstapple.png';
 
-export default function Onboarding1() {
+export default function OnboardingPage() {
   const navigate = useNavigate();
 
   const handleStart = () => {
-    navigate('/index');
+    navigate('/preset');
   };
 
   return (
@@ -15,9 +15,9 @@ export default function Onboarding1() {
           <img
             src={onboardingimg}
             alt="onboardingimg"
-            className="w-[270px] h-auto object-contain mx-auto mt-12"
+            className="w-[270px] h-auto object-contain mx-auto mt-32"
           />
-          <h3 className="text-center text-[22px] font-bold leading-snug mt-4">
+          <h3 className="text-center text-[22px] font-bold leading-snug mt-15">
             먼저사과해!
             <br />
             <br />
@@ -28,7 +28,7 @@ export default function Onboarding1() {
           </h3>
 
           {/* 시작하기 버튼 */}
-          <div className="flex justify-center mt-24 mb-20">
+          <div className="flex justify-center mt-24 mb-10">
             <button
               onClick={handleStart}
               className="font-['Inter'] w-[220px] px-8 py-4 bg-[#EB4A40] rounded-[48px] text-white text-base font-bold leading-none"

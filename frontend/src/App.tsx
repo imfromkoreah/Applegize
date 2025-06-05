@@ -1,21 +1,30 @@
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-import Page1 from './pages/Page1';
-import Onboarding from './pages/Onboarding';
-import Result from './pages/Result';
+import PresetPage from './pages/PresetPage';
+import OnboardingPage from './pages/OnboardingPage';
+import ResultPage from './pages/ResultPage';
+import LoadingPage from './pages/LoadingPage';
 
 function App() {
   return (
     <Routes>
       {/* Onboarding은 Layout 없이 직접 렌더링 */}
-      <Route path="/" element={<Onboarding />} />
+      <Route path="/" element={<OnboardingPage />} />
       
       {/* 나머지 페이지들은 Layout으로 감싸기 */}
       <Route
-        path="/index"
+        path="/preset"
         element={
           <Layout>
-            <Page1 />
+            <PresetPage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/loading"
+        element={
+          <Layout>
+            <LoadingPage />
           </Layout>
         }
       />
@@ -23,7 +32,7 @@ function App() {
         path="/result"
         element={
           <Layout>
-            <Result />
+            <ResultPage />
           </Layout>
         }
       />
