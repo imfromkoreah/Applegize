@@ -5,7 +5,7 @@ export default function OnboardingPage() {
   const navigate = useNavigate();
 
   const handleStart = () => {
-    navigate('/preset');
+    navigate('/preset/gap');
   };
 
   return (

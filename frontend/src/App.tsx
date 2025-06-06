@@ -1,6 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-import PresetPage from './pages/PresetPage';
+import GapPage from './pages/GapPage';
+import LovePage from './pages/LovePage';
+import ConflictPage from './pages/ConflictPage';
 import OnboardingPage from './pages/OnboardingPage';
 import ResultPage from './pages/ResultPage';
 import LoadingPage from './pages/LoadingPage';
@@ -10,13 +12,29 @@ function App() {
     <Routes>
       {/* Onboarding은 Layout 없이 직접 렌더링 */}
       <Route path="/" element={<OnboardingPage />} />
-      
+
       {/* 나머지 페이지들은 Layout으로 감싸기 */}
       <Route
-        path="/preset"
+        path="/preset/gap"
         element={
           <Layout>
-            <PresetPage />
+            <GapPage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/preset/conflict"
+        element={
+          <Layout>
+            <ConflictPage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/preset/love"
+        element={
+          <Layout>
+            <LovePage />
           </Layout>
         }
       />

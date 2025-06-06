@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TopNav from "../components/TopNav"; // TopNav 경로에 맞게 조정하세요
 
-const PresetPage = () => {
+const GapPage = () => {
   const [selectedTab, setSelectedTab] = useState("tab1");
   const [file, setFile] = useState<File | null>(null);
   const navigate = useNavigate();
@@ -15,6 +15,19 @@ const PresetPage = () => {
 
   const handleTabClick = (tabId: string) => {
     setSelectedTab(tabId);
+    switch (tabId) {
+      case "tab1":
+        navigate("/preset/gap");
+        break;
+      case "tab2":
+        navigate("/preset/conflict");
+        break;
+      case "tab3":
+        navigate("/preset/love");
+        break;
+      default:
+        break;
+    }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -61,10 +74,9 @@ const PresetPage = () => {
         </div>
 
         {/* 타이틀 문구 */}
-        <div className="text-center text-[#090A0A] text-2xl font-extrabold mb-3 font-Pretendard">
-          난 갑이고! 넌 을이야!
-          <br />
-          대화로 보는 갑/을 분석
+        <div className="text-center text-[#090A0A] font-extrabold mb-3 font-Pretendard">
+          <div className="text-2xl">난 갑이고! 넌 을이야!</div>
+          <div className="text-lg mt-1">대화로 보는 갑/을 분석</div>
         </div>
 
         {/* 텍스트 안내문 */}
@@ -97,7 +109,10 @@ const PresetPage = () => {
               onChange={handleFileChange}
               className="hidden"
             />
-            <div className="text-[#0D59E6] text-xs font-extrabold font-Manrope cursor-pointer">
+            <div
+              className="text-[#0D59E6] text-xs font-extrabold font-Manrope cursor-pointer underline"
+              onClick={() => window.open("https://example.com/guide", "_blank")}
+            >
               텍스트 파일 추출 방법 확인하기
             </div>
           </div>
@@ -118,11 +133,22 @@ const PresetPage = () => {
           <div className="mb-1 font-medium">이용 안내 가이드</div>
           <div className="px-2 text-sm">• 먼저사과해는 채팅 내용을 일체 저장하지 않습니다</div>
           <div className="px-2">• 결과 분석은 ChatGPT를 활용해 제공합니다</div>
-          <div className="px-2">• 자세한 가이드는 여기를 확인해 주세요</div>
+          <div className="px-2">
+            • 자세한 가이드는{" "}
+            <a
+              href="https://example.com/guide"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-blue-600 font-medium"
+            >
+              여기를 클릭
+            </a>{" "}
+            해주세요
+          </div>
         </div>
       </main>
     </>
   );
 };
 
-export default PresetPage;
+export default GapPage;
