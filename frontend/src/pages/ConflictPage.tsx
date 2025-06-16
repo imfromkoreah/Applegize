@@ -86,14 +86,11 @@ const ConflictPage = () => {
         </div>
 
         {/* 파일 업로드 박스 */}
-        <div className="w-full bg-white rounded-md border-2 border-dashed border-gray-400 mt-10 mb-10">
+        <div className="w-full bg-white rounded-md border-2 border-dashed border-gray-400 mt-10 mb-12">
           <div className="py-6 flex flex-col items-center gap-4">
             <div className="text-center text-[#191D23] text-base font-extrabold font-Pretendard">
-              채팅 텍스트 파일(.txt) 혹은
-              <br />
-              이미지 파일( .jpg나 .png)을
-              <br />
-              업로드 해주세요
+              대화 스크린샷(.jpg 또는 .png)을<br />
+              업로드해 주세요.
             </div>
             <label
               htmlFor="file-upload"
