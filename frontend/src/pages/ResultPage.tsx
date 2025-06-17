@@ -45,54 +45,78 @@ const ResultPage = () => {
   // 선택된 탭에 따른 리포트 렌더링
   const renderReport = () => {
     switch (selectedTab) {
-      case "tab1":
-        return (
-          <div className="report-card">
-            <div className="flex justify-center">{renderCategoryBadge()}</div>
-            <div className="w-[311px] h-[411px] relative">
-              <div className="w-full h-full bg-white rounded-2xl border border-black/50" />
-              <div className="absolute left-[65px] top-[56px] text-center text-[#090a0a] text-lg font-bold font-['Inter'] leading-normal">
-                신짱구(갑) &gt; 봉미선(을)
-              </div>
-              <div className="absolute left-[85px] top-[98px] text-center text-[#090a0a] text-lg font-bold font-['Inter'] leading-normal">
-                멤버들의 역할 정리
-              </div>
-              <div className="absolute left-[106px] top-[270px] text-center text-[#090a0a] text-lg font-bold font-['Inter'] leading-normal">
-                갑 vs 을 구도
-              </div>
-              <div className="absolute left-[113px] top-[32px] text-center text-[#090a0a] text-[13px] font-normal font-['Inter'] leading-none">
-                심판하겠습니다
-              </div>
-              <div className="absolute left-[19px] top-[299px] text-center text-[#090a0a] text-[13px] font-normal font-['Inter'] leading-none">
-                갑
-              </div>
-              <div className="absolute left-[279px] top-[300px] text-center text-[#090a0a] text-[13px] font-normal font-['Inter'] leading-none">
-                을
-              </div>
-              <div className="absolute w-[272px] left-[19px] top-[161px] text-[#090a0a] text-[15px] leading-tight">
-                <span className="font-bold font-['Inter']">짱구</span>
-                <span className="font-normal font-['Inter']">
-                  {" "}
-                  : 그룹 분위기를 이끌며, 일상적인 대화를 통해 대화하지만 강압적.
-                </span>
-              </div>
-              <div className="absolute w-[272px] left-[19px] top-[209px] text-[#090a0a] text-[15px] leading-tight">
-                <span className="font-bold font-['Inter']">미선</span>
-                <span className="font-normal font-['Inter']">
-                  {" "}
-                  : 감정적으로 연결되어 있어 상대방의 기분을 맞추는 수동적인 모습.
-                </span>
-              </div>
-              <div className="absolute w-[283px] h-[13px] p-1.5 left-[14px] top-[320px] bg-gradient-to-r from-[#bc4fd2] via-[#ffe0df] to-[#a5e1a5] rounded-[20px]" />
-              <div className="absolute w-10 h-[25px] p-1.5 left-[65px] top-[341px] bg-[#e8e8e8]/75 rounded-[15px] inline-flex justify-center items-center">
-                <div className="text-black text-xs font-bold font-['Manrope']">짱구</div>
-              </div>
-              <div className="absolute w-10 h-[25px] p-1.5 left-[179px] top-[362px] bg-[#e8e8e8]/75 rounded-[15px] inline-flex justify-center items-center">
-                <div className="text-black text-xs font-bold font-['Manrope']">미선</div>
-              </div>
+case "tab1":
+  return (
+    <div className="report-card">
+      <div className="relative w-[311px] bg-white rounded-2xl border border-black/50 pb-6">
+
+        {/* 배지 (상단 고정) */}
+        <div className="absolute left-0 right-0 top-4 flex justify-center z-10">
+          {renderCategoryBadge()}
+        </div>
+
+        {/* 조정 가능한 요소들 */}
+        <div className="relative z-0 px-4 pt-16"> {/* pt-16로 배지 공간 확보 */}
+          {/* 제목 위 텍스트 */}
+          <div className="mb-2 text-center text-[#090a0a] text-sm font-normal font-['Inter']" style={{ marginTop: '10px' }}>
+            심판하겠습니다
+          </div>
+
+          {/* 갑을 제목 */}
+          <div className="mb-2 text-center text-[#090a0a] text-lg font-bold font-['Inter']">
+            신짱구(갑) &gt; 봉미선(을)
+          </div>
+
+          {/* 섹션 제목 */}
+          <div className="mb-4 text-center text-[#090a0a] text-lg font-bold font-['Inter']">
+            멤버들의 역할 정리
+          </div>
+
+          {/* 짱구 설명 */}
+          <div className="mb-2 text-[#090a0a] text-[15px] leading-tight">
+            <span className="font-bold font-['Inter']">짱구</span>
+            <span className="font-normal font-['Inter']">
+              : 그룹 분위기를 이끌며, 일상적인 대화를 통해 대화하지만 강압적.
+            </span>
+          </div>
+
+          {/* 미선 설명 */}
+          <div className="mb-6 text-[#090a0a] text-[15px] leading-tight">
+            <span className="font-bold font-['Inter']">미선</span>
+            <span className="font-normal font-['Inter']">
+              : 감정적으로 연결되어 있어 상대방의 기분을 맞추는 수동적인 모습.
+            </span>
+          </div>
+
+          {/* 갑 vs 을 구도 */}
+          <div className="mb-2 text-center text-[#090a0a] text-lg font-bold font-['Inter']">
+            갑 vs 을 구도
+          </div>
+
+          {/* 갑 / 을 텍스트 */}
+          <div className="flex justify-between text-[#090a0a] text-sm mb-1">
+            <span>갑</span>
+            <span>을</span>
+          </div>
+
+          {/* 그래디언트 바 */}
+          <div className="w-full h-[13px] bg-gradient-to-r from-[#bc4fd2] via-[#ffe0df] to-[#a5e1a5] rounded-[20px] mb-3" />
+
+          {/* 네임 태그들 */}
+          <div className="flex justify-around">
+            <div className="w-10 h-[25px] bg-[#e8e8e8]/75 rounded-[15px] flex items-center justify-center text-black text-xs font-bold font-['Manrope']">
+              짱구
+            </div>
+            <div className="w-10 h-[25px] bg-[#e8e8e8]/75 rounded-[15px] flex items-center justify-center text-black text-xs font-bold font-['Manrope']">
+              미선
             </div>
           </div>
-        );
+        </div>
+      </div>
+    </div>
+  );
+
+  
       case "tab2":
         return (
           <div className="report-card p-4 bg-white rounded-2xl border border-black/50 w-[311px]">
